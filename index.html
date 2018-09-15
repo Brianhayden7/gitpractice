@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: Green;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: Blue;
+}
+
+p {
+    font-size: 30px;
+    color: blue;
+}
+</style>
+</head>
+<body>
+
+<h2><img src="/Pictures/Profile Pic.jpg" alt="Profile Picture" style="float:right;width:128px;height:128px;">Brian Hayden</h2>
+<p>Portfolio</p>
+
+<ul>
+  <li><a href="index.html">Home</a></li>
+  <li><a href="page1.html">About</a></li>
+  <li><a href="page2.html">Work Experience</a></li>
+  <li><a href="page3.html">Projects</a></li>
+</ul>
+
+<h2> See some of the work I've done.</h2>
+<button onclick="myFunction()">Magic</button>
+
+<script>
+function myFunction() {
+    document.body.style.backgroundColor = "yellow";
+}
+</script>
+</body>
+</html>
