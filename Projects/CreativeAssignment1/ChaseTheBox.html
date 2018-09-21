@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+ <head>
+     <style>
+     body
+     {
+         background-color:green;
+     }
+         #butt{
+             position:absolute;
+             visibility:hidden;
+         }
+         #endgame{
+             position:absolute;
+             left:50%;
+             top:50%;
+             z-index: 10;
+             visibility: hidden;
+             
+         }
+         #instructions{
+             color:white;
+         }
+     </style>
+     
+     <script type="text/javascript">
+     
+     var count=0;
+     var start_time=0;
+     var end_time=0;
+     var time=0;
+         
+         function ChaseTheBox()
+        {
+            end_time=new Date().getTime()/1000;
+            time=end_time-start_time;
+            if(time>=10)
+            {
+                end_game();
+            }
+            var X=Math.random()*97;
+            var xper=X+"%";
+            var Y=Math.random()*98;
+            var yper=Y+"%";
+            document.getElementById("butt").style.top=yper;
+            document.getElementById("butt").style.left=xper;
+            count++;
+            
+        }
+        function end_game()
+        {
+            end_time=new Date().getTime()/1000;
+            time=end_time-start_time;
+            var inner="<h>You clicked the button "+count+" times in 10 seconds</h>";
+            var results=document.getElementById('results');
+            results.innerHTML=inner;
+            results.visibility="visible";
+            count=0;
+            document.getElementById("butt").style.visibility="hidden";
+            document.getElementById("endgame").style.visibility="hidden";
+            document.getElementById("start").style.visibility="visible";
+            document.getElementById("instructions").style.visibility="visible";
+
+        }
+        function start()
+        {
+            start_time=new Date().getTime()/1000;
+            document.getElementById("butt").style.top="50%";
+            document.getElementById("butt").style.left="50%";
+            document.getElementById("butt").style.visibility="visible";
+            document.getElementById("instructions").style.visibility="hidden";
+            //document.getElementById("endgame").style.visibility="visible";
+            document.getElementById("start").style.visibility="hidden";
+            document.body.bgColor="red";
+        }
+        </script>
+ </head>
+ <body>
+     <h id="instructions">Once you press the start button, you will have 10 seconds to click the box as many times as possible</h>
+        <button id="start" type="button_1" onclick=start()>Start Game</button>
+     <button id="butt" type="button" onclick=ChaseTheBox()>
+     click me</button>
+    <button id="endgame" type="button" onclick=end_game()>
+        End Game</button>
+        
+        <div id="results">
+            
+        </div>
+ </body>
+        
+
+</html>
