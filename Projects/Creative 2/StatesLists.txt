@@ -1,0 +1,18 @@
+[
+{"States":"Alabama"},{"States":"Alaska"},{"States":"Arizona"},{"States":"Arkansas"},
+{"States":"California"},{"States":"Colorado"},{"States":"Connecticut"},
+{"States":"Delaware"},{"States":"Florida"},{"States":"Georgia"},{"States":"Hawaii"},
+{"States":"Idaho"},{"States":"Illinois"},{"States":"Indiana"},{"States":"Iowa"},
+{"States":"Kansas"},{"States":"Kentucky"},{"States":"Louisiana"},{"States":"Maine"},
+{"States":"Maryland"},{"States":"Massachusetts"},{"States":"Michigan"},
+{"States":"Minnesota"},{"States":"Mississippi"},{"States":"Missouri"},
+{"States":"Montana"},{"States":"Nebraska"},{"States":"Nevada"},
+{"States":"New Hampshire"},{"States":"New Jersey"},{"States":"New Mexico"},
+{"States":"New York"},{"States":"North Carolina"},{"States":"North Dakota"},
+{"States":"Ohio"},{"States":"Oklahoma"},{"States":"Oregon"},{"States":"Pennsylvania"},
+{"States":"Rhode Island"},{"States":"South Carolina"},{"States":"South Dakota"},
+{"States":"Tennessee"},{"States":"Texas"},{"States":"Utah"},{"States":"Vermont"},
+{"States":"Virginia"},{"States":"Washington"},{"States":"West Virginia"},
+{"States":"Wisconsin"},{"States":"Wyoming"}
+
+]
