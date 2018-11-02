@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Creative 4</title>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="http://code.jquery.com/jquery-3.2.1.min.js">
+    </script>
+    
+    <style>
+        body{
+            background-color: #884AFF;
+
+        }
+        
+        #title{
+            background-color: #E8620C;
+            border-style: solid;
+            border-width: medium;
+        }
+        #body{
+            background-color: #FFBC0D;
+            border-style: solid;
+            border-width: medium;
+        }
+    </style>
+    
+</head>
+
+<body>
+    <div id="title">
+        <center>
+            <h1>Address Coordinates</h1>
+        </center>
+    </div>
+
+    <div id="body">
+        <form>
+            <center>
+                Enter an Address: <input type="text" id="geoform" value=""><br>
+                <button id="geobutton">submit</button><br> Coordinates: <br><span id="geodef">Lat: ,Lng: </span>
+            </center>
+        </form>
+    </div>
+    <script>
+        $("#geobutton").click(function() {
+            event.preventDefault();
+            var url = "geo?q=" + $("#geoform").val();
+            console.log(url);
+            $.getJSON(url, function(data) {
+                console.log(data.results[0].geometry.location.lat);
+                var everything;
+                everything = "<p>";
+                everything += "Lat: " + data.results[0].geometry.location.lat + ", Lng: " + data.results[0].geometry.location.lng;
+                everything += "</p>";
+                $("#geodef").html(everything);
+            });
+        });
+    </script>
+
+
+</body>
+
+</html>
