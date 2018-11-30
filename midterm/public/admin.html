@@ -1,0 +1,42 @@
+<html>
+
+<head>
+    <title>Admin</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
+    <script src="javascripts/shop.js"></script>
+    <style>
+        body {
+            background-color: peru;
+        }
+
+        img {
+            padding: 1px;
+            border: 1px solid #021a40;
+            background-color: #ff0;
+        }
+    </style>
+</head>
+
+<body ng-app="product" ng-controller="MainCtrl">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="page-header">
+                <h1>Store Management Interface</h1>
+            </div>
+
+            <form ng-submit="addProduct()" style="margin-top30px;">
+                <h4>Product Name</h4><input type="text" ng-model="formContent1"></input><br>
+                <h4>Price</h4><input type="text" ng-model="form2"></input><br>
+                <h4>Picture URL</h4><input type="text" ng-model="formContent3"></input><br>
+                <button type="submit">Add Product</button>
+            </form>
+            <h1>Current Products</h1><br>
+            <div ng-repeat="pizza in pizzas | orderBy: 'name'">
+                <span class="glyphicon glyphicon-remove" ng-click="delete(pizza)"></span> {{pizza.name}} - price: {{pizza.cost}} - ordered: {{pizza.orders}} <img ng-src="{{pizza.img}}" />
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

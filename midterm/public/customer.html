@@ -1,0 +1,50 @@
+<html>
+
+<head>
+    <title>Customer</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
+    <script src="javascripts/shop.js"></script>
+    <style>
+        body {
+            background-color: LightSteelBlue;
+        }
+
+        img {
+            padding: 1px;
+            border: 1px solid #021a40;
+            background-color: #ff0;
+        }
+    </style>
+</head>
+
+<body ng-app="product" ng-controller="MainCtrl">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="col-md-6 col-md-offset-3">
+                <div class="page-header">
+                    <h1>Shopping Interface</h1>
+                    <br>
+                    <h1>Current Products</h1>
+                </div>
+
+                <div ng-repeat="pizza in pizzas | orderBy: 'name'">
+                    <input type="checkbox" ng-model="pizza.selected" ng-init="checked=true"> {{pizza.name}} - price {{pizza.cost}} <img ng-src="{{pizza.img}}" />
+                </div>
+                <button ng-click="Purchase()">
+                    Submit Purchase
+                </button>
+                <h1>Shopping Cart</h1><br>
+                <div ng-repeat="pizza in pizzas | orderBy: 'name'">
+                    {{pizza}}
+                </div>
+                <div ng-repeat="pizza in pizzas | filter:selected as results track by cart">
+                    {{cart.name}} - price {{cart.cost}} <img ng-src="{{cart.img}}" />
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
